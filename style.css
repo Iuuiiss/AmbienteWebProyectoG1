@@ -327,3 +327,150 @@ th {
         flex-direction: column;
     }
 }
+
+/* ==========================================================
+   Pantallas secundarias
+   (login, registro, recuperar contraseña, mis citas,
+   mi cuenta y panel de administrador)
+   ========================================================== */
+
+/* --- Alertas (ocultas por defecto; se muestran con .mostrar) --- */
+.alertaError, .alertaExito {
+    display: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.alertaError {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alertaExito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alertaError.mostrar, .alertaExito.mostrar {
+    display: block;
+}
+
+/* Hover de botones*/
+.btn-primary:hover {
+    background-color: #3a6fae;
+    border-color: #3a6fae;
+}
+
+.btn-secondary:hover {
+    background-color: #e8f0fa;
+}
+
+/* Boton de peligro */
+.btnPeligro {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btnPeligro:hover {
+    background-color: #b02a37;
+    border-color: #b02a37;
+}
+
+/* Textarea igual a los inputs */
+.campoForm textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* --- Enlace de texto debajo de un formulario --- */
+.enlaceForm {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+    color: grey;
+}
+
+.enlaceForm a {
+    color: #4785cb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.enlaceForm a:hover {
+    text-decoration: underline;
+}
+
+/*Error de un campo especifico (debajo del input) */
+.errorCampo {
+    display: block;
+    color: #721c24;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/*  Layout del panel de administrador  */
+.panelAdmin {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.panelMenu {
+    width: 200px;
+    flex-shrink: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.panelMenu a {
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    color: #4785cb;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.panelMenu a:hover {
+    background-color: #f2f2f2;
+}
+
+.panelMenu a.activo {
+    background-color: #4785cb;
+    color: white;
+}
+
+.panelContenido {
+    flex: 1;
+    min-width: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .panelAdmin {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .panelMenu {
+        width: 100%;
+    }
+}
