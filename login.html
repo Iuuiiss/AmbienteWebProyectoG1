@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - TurnoFácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">TurnoFacil</a>
+                <ul class="linksNavbar">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#reservar">Reservar</a></li>
+                    <li><a href="index.html#horarios">Horarios</a></li>
+                    <li><a href="login.html">Iniciar sesion</a></li>
+                    <li><a href="registro.html" class="btn btn-secondary btnNavbar">Registrarse</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="encabezadoSeccionCentro">
+                <span class="subtitulo">Bienvenido de nuevo</span>
+                <h2>Iniciar sesión</h2>
+                <p class="texto-gris">Ingresá con tu correo y contraseña para gestionar tus citas.</p>
+            </div>
+
+            <div class="formContainer">
+                <div id="alertaError" class="alertaError"></div>
+                <div id="alertaExito" class="alertaExito"></div>
+
+                <form id="formLogin" novalidate>
+
+                    <div class="campoForm">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" placeholder="correo@ejemplo.com" aria-describedby="errorCorreo">
+                        <span id="errorCorreo" class="errorCampo"></span>
+                    </div>
+
+                    <div class="campoForm">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" placeholder="Mínimo 8 caracteres" aria-describedby="errorContrasena">
+                        <span id="errorContrasena" class="errorCampo"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btnReserva">Iniciar sesión</button>
+
+                </form>
+
+                <p class="enlaceForm"><a href="recuperar.html">¿Olvidaste tu contraseña?</a></p>
+                <p class="enlaceForm">¿No tenés cuenta? <a href="registro.html">Registrate</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TurnoFacil - Sistema de reservacion de citas. SC-502 Ambiente Web.</p>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
