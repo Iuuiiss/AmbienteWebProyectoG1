@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de administrador - TurnoFácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">TurnoFacil</a>
+                <ul class="linksNavbar">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html" class="btn btn-secondary btnNavbar">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="encabezadoSeccionCentro">
+                <span class="subtitulo">Administración</span>
+                <h2>Panel de administrador</h2>
+                <p class="texto-gris">Gestioná los servicios, horarios, citas y usuarios de TurnoFácil.</p>
+            </div>
+
+            <div class="panelAdmin">
+
+                <!-- Menú lateral: data-seccion indica qué sección muestra cada opción -->
+                <nav class="panelMenu">
+                    <a href="#" data-seccion="seccionServicios" class="activo">Servicios</a>
+                    <a href="#" data-seccion="seccionHorarios">Horarios</a>
+                    <a href="#" data-seccion="seccionCitas">Citas</a>
+                    <a href="#" data-seccion="seccionUsuarios">Usuarios</a>
+                </nav>
+
+                <div class="panelContenido">
+                    <div id="alertaError" class="alertaError"></div>
+                    <div id="alertaExito" class="alertaExito"></div>
+
+                    <!-- 1. Servicios -->
+                    <div id="seccionServicios" class="seccionPanel">
+                        <h3 id="tituloFormServicio">Agregar servicio</h3>
+
+                        <form id="formServicio" novalidate>
+                            <div class="campoForm">
+                                <label for="nombreServicio">Nombre</label>
+                                <input type="text" id="nombreServicio" placeholder="Ej: Corte de Cabello" aria-describedby="errorNombreServicio">
+                                <span id="errorNombreServicio" class="errorCampo"></span>
+                            </div>
+
+                            <div class="fila-doble">
+                                <div class="campoForm">
+                                    <label for="duracionServicio">Duración (minutos)</label>
+                                    <input type="number" id="duracionServicio" placeholder="10 a 180" aria-describedby="errorDuracionServicio">
+                                    <span id="errorDuracionServicio" class="errorCampo"></span>
+                                </div>
+
+                                <div class="campoForm">
+                                    <label for="precioServicio">Precio (₡)</label>
+                                    <input type="number" id="precioServicio" placeholder="Ej: 5000" aria-describedby="errorPrecioServicio">
+                                    <span id="errorPrecioServicio" class="errorCampo"></span>
+                                </div>
+                            </div>
+
+                            <button type="submit" id="btnGuardarServicio" class="btn btn-primary">Agregar servicio</button>
+                            <button type="button" id="btnCancelarEdicion" class="btn btn-secondary" hidden>Cancelar edición</button>
+                        </form>
+
+                        <h3>Servicios registrados</h3>
+                        <div class="tablaHorarios">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Duración</th>
+                                        <th>Precio</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cuerpoTablaServicios"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 2. Horarios -->
+                    <div id="seccionHorarios" class="seccionPanel" hidden>
+                        <h3>Horarios de atención</h3>
+                        <div class="tablaHorarios">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Dia</th>
+                                        <th>Apertura</th>
+                                        <th>Cierre</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cuerpoTablaHorarios"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 3. Citas -->
+                    <div id="seccionCitas" class="seccionPanel" hidden>
+                        <h3>Citas de los clientes</h3>
+                        <div class="tablaHorarios">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Servicio</th>
+                                        <th>Fecha</th>
+                                        <th>Hora</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cuerpoTablaCitas"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 4. Usuarios -->
+                    <div id="seccionUsuarios" class="seccionPanel" hidden>
+                        <h3>Clientes registrados</h3>
+                        <div class="tablaHorarios">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Teléfono</th>
+                                        <th>Estado</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cuerpoTablaUsuarios"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TurnoFacil - Sistema de reservacion de citas. SC-502 Ambiente Web.</p>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

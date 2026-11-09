@@ -161,43 +161,51 @@
             </div>
 
             <div class="formContainer">
-                <form id="formCita">
+                <div id="alertaError" class="alertaError"></div>
+                <div id="alertaExito" class="alertaExito"></div>
+
+                <form id="formCita" novalidate>
 
                     <div class="campoForm">
                         <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" placeholder="Ej: Luis Mora Rojas" required>
+                        <input type="text" id="nombre" placeholder="Ej: Luis Mora Rojas" required aria-describedby="errorNombre">
+                        <span id="errorNombre" class="errorCampo"></span>
                     </div>
 
                     <div class="fila-doble">
                         <div class="campoForm">
                             <label for="correo">Correo electronico</label>
-                            <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+                            <input type="email" id="correo" placeholder="correo@ejemplo.com" required aria-describedby="errorCorreo">
+                            <span id="errorCorreo" class="errorCampo"></span>
                         </div>
                         <div class="campoForm">
                             <label for="telefono">Telefono</label>
-                            <input type="tel" id="telefono" placeholder="8888-8888" required>
+                            <input type="tel" id="telefono" placeholder="8888-8888" required aria-describedby="errorTelefono">
+                            <span id="errorTelefono" class="errorCampo"></span>
                         </div>
                     </div>
 
                     <div class="campoForm">
                         <label for="servicio">Servicio</label>
-                        <select id="servicio" required>
+                        <select id="servicio" required aria-describedby="errorServicio">
                             <option value="">-- Seleccione un servicio --</option>
                             <option value="Corte de Cabello">Corte de Cabello (30 min - ₡5,000)</option>
                             <option value="Arreglo de Barba">Arreglo de Barba (20 min - ₡3,500)</option>
                             <option value="Combo Completo">Combo Completo (50 min - ₡7,500)</option>
                             <option value="Limpieza Facial">Limpieza Facial (40 min - ₡6,000)</option>
                         </select>
+                        <span id="errorServicio" class="errorCampo"></span>
                     </div>
 
                     <div class="fila-doble">
                         <div class="campoForm">
                             <label for="fecha">Fecha</label>
-                            <input type="date" id="fecha" required>
+                            <input type="date" id="fecha" required aria-describedby="errorFecha">
+                            <span id="errorFecha" class="errorCampo"></span>
                         </div>
                         <div class="campoForm">
                             <label for="hora">Hora</label>
-                            <select id="hora" required>
+                            <select id="hora" required aria-describedby="errorHora">
                                 <option value="">-- Seleccione hora --</option>
                                 <option value="09:00">09:00 AM</option>
                                 <option value="10:00">10:00 AM</option>
@@ -208,6 +216,7 @@
                                 <option value="16:00">04:00 PM</option>
                                 <option value="17:00">05:00 PM</option>
                             </select>
+                            <span id="errorHora" class="errorCampo"></span>
                         </div>
                     </div>
 

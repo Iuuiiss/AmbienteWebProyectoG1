@@ -420,6 +420,23 @@ th {
     margin-top: 4px;
 }
 
+/* --- Mis citas --- */
+/* Mismo ancho que la tabla, para que la alerta y el mensaje queden alineados con ella */
+.contenidoCitas {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mensajeSinCitas {
+    text-align: center;
+}
+
+/* Estado "Atendida" (verde = confirmada, rojo = cancelada) */
+.badge-estado.atendida {
+    background-color: #d6e4f5;
+    color: #1f4e85;
+}
+
 /*  Layout del panel de administrador  */
 .panelAdmin {
     display: flex;

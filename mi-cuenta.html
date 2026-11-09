@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi cuenta - TurnoFácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">TurnoFacil</a>
+                <ul class="linksNavbar">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mis-citas.html">Mis citas</a></li>
+                    <li><a href="mi-cuenta.html">Mi cuenta</a></li>
+                    <li><a href="index.html" class="btn btn-secondary btnNavbar">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="encabezadoSeccionCentro">
+                <span class="subtitulo">Tu perfil</span>
+                <h2>Mi cuenta</h2>
+                <p class="texto-gris">Consultá tus datos y cambiá tu contraseña cuando lo necesités.</p>
+            </div>
+
+            <div class="formContainer">
+
+                <!-- Parte 1: datos de la cuenta (solo lectura) -->
+                <h3>Datos de la cuenta</h3>
+
+                <div class="campoForm">
+                    <span class="subtitulo">Nombre completo</span>
+                    <p>María Fernández Rojas</p>
+                </div>
+
+                <div class="campoForm">
+                    <span class="subtitulo">Correo electrónico</span>
+                    <p>maria.fernandez@ejemplo.com</p>
+                </div>
+
+                <div class="campoForm">
+                    <span class="subtitulo">Teléfono</span>
+                    <p>8888-8888</p>
+                </div>
+
+                <hr>
+
+                <!-- Parte 2: cambiar contraseña -->
+                <h3>Cambiar contraseña</h3>
+
+                <div id="alertaError" class="alertaError"></div>
+                <div id="alertaExito" class="alertaExito"></div>
+
+                <form id="formCambiarContrasena" novalidate>
+
+                    <div class="campoForm">
+                        <label for="contrasenaActual">Contraseña actual</label>
+                        <input type="password" id="contrasenaActual" placeholder="Tu contraseña actual" aria-describedby="errorContrasenaActual">
+                        <span id="errorContrasenaActual" class="errorCampo"></span>
+                    </div>
+
+                    <div class="campoForm">
+                        <label for="nuevaContrasena">Nueva contraseña</label>
+                        <input type="password" id="nuevaContrasena" placeholder="Mínimo 8 caracteres, con letras y números" aria-describedby="errorNuevaContrasena">
+                        <span id="errorNuevaContrasena" class="errorCampo"></span>
+                    </div>
+
+                    <div class="campoForm">
+                        <label for="confirmarNuevaContrasena">Confirmar nueva contraseña</label>
+                        <input type="password" id="confirmarNuevaContrasena" placeholder="Repetí la nueva contraseña" aria-describedby="errorConfirmarNuevaContrasena">
+                        <span id="errorConfirmarNuevaContrasena" class="errorCampo"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btnReserva">Actualizar contraseña</button>
+
+                </form>
+
+                <p class="enlaceForm"><a href="mis-citas.html">Ver mis citas</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TurnoFacil - Sistema de reservacion de citas. SC-502 Ambiente Web.</p>
+        </div>
+    </footer>
+
+    <script src="mi-cuenta.js"></script>
+</body>
+</html>
